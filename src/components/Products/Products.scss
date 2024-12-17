@@ -1,0 +1,26 @@
+@import "../../colors.scss";
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.rounded-circle {
+  gap: 10px;
+}
+.col-lg-4 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $primaryColor;
+  padding: 5px;
+  border-radius: 10px;
+}
