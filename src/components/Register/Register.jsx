@@ -32,7 +32,7 @@ const Register = () => {
     console.log(data); //mostramos por consola la información del formulario(data)
     createUser(data);
     setData(initialValue); //limpiamos el formulario
-    // navigate("/")// redireccionamos a home
+    navigate("/")// redireccionamos a home
   };
 
   return (

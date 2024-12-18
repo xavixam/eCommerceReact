@@ -12,18 +12,18 @@ const Products = () => {
   }, []);
 
   return (
-    <div class="row">
+    <div className="row">
       {products.map((product) => {
         return (
-          <div key={product.id} class="col-lg-4">
+          <div key={product.id} className="col-lg-4">
             <img
-              class="rounded-circle"
+              className="rounded-circle"
               width="140"
               height="140"
               src={"./../src/assets/descarga.jpg"}
             />
-            <div class="info">
-              <h2 class="fw-normal">{product.name}</h2>
+            <div className="info">
+              <h2 className="fw-normal">{product.name}</h2>
               <p>{product.price}€</p>
             </div>
             <br />
