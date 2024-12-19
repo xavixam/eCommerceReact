@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import { ProductContext } from "../../context/ProductsContext/ProductsState";
+import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "antd";
 
 const Products = () => {
-  const { products, getProducts } = useContext(ProductContext);
+  const { products, getProducts, addCart } = useContext(ProductsContext);
 
   //se ejecutará al cargar la página
   useEffect(() => {
@@ -25,6 +26,7 @@ const Products = () => {
             <div className="info">
               <h2 className="fw-normal">{product.name}</h2>
               <p>{product.price}€</p>
+              <Button onClick={() => addCart(product)}>Add Cart</Button>
             </div>
             <br />
           </div>

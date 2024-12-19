@@ -4,15 +4,18 @@ import axios from "axios";
 
 const initialState = {
   products: [],
+  cart: [],
 };
 
-export const ProductContext = createContext(initialState);
+const API_URL = "http://localhost:3000/products"
+
+export const ProductsContext = createContext(initialState);
 
 export const ProductProvider = ({children}) => {
   const [state, dispatch] = useReducer(ProductsReducer, initialState);
 
   const getProducts = async () => {
-    const res = await axios.get("http://localhost:3000/products");
+    const res = await axios.get(API_URL);
     
     //modificamos el estado de Characters
     dispatch({
@@ -21,14 +24,30 @@ export const ProductProvider = ({children}) => {
     });
   };
 
+  const addCart = (product) => {
+    dispatch({
+      type: "ADD_CART",
+      payload: product,
+    });
+  };
+
+  const clearCart =()=>{
+    dispatch({
+      type:"CLEAR_CART"
+    })
+} 
+
   return (
-    <ProductContext.Provider
+    <ProductsContext.Provider
       value={{
         products: state.products,
+        cart: state.cart,
         getProducts,
+        addCart,
+        clearCart
       }}
     >
       {children}
-    </ProductContext.Provider>
+    </ProductsContext.Provider>
   );
 };

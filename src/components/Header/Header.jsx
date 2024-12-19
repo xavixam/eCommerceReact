@@ -3,9 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UsersContext } from "../../context/UsersContext/UsersState";
+import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+import { Badge } from "antd";
 
 const Header = () => {
   const { token, logout } = useContext(UsersContext);
+  const { cart } = useContext(ProductsContext);
+
   const navigate = useNavigate();
 
   const logoutUser = () => {
@@ -36,7 +40,12 @@ const Header = () => {
           </li>
           {token ? (
             <>
-            <li className="nav-item">
+              <li className="nav-item">
+                <Link to="/cart" className="nav-link">
+                  <Badge count={cart.length}>Cart</Badge>{" "}
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/profile" className="nav-link">
                   Profile
                 </Link>
