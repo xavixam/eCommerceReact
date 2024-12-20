@@ -1,4 +1,37 @@
+@import "../../colors.scss";
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $thirdColor;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.row {
+    margin: 20px;
+}
+
+h2 {
+    justify-content: center;
+    margin: 10px;
+}
+
+.card {
+    margin: 10px;
+}
+
 .buttons {
     display: flex;
     justify-content: space-around;
+    margin: 20px;
+    width: 95%;
 }

@@ -1,0 +1,21 @@
+@import "../../colors.scss";
+
+.container-container {
+    display: flex;
+    justify-content: center;
+    background-color: $thirdColor;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+    width: 100%;
+}
+
+.ant-form-item-control-input-content{
+    display: flex;
+    justify-content: center;
+}

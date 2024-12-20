@@ -11,41 +11,51 @@ const Profile = () => {
   useEffect(() => {
     getUserInfo();
   }, []);
-if(!user)return <p>cargando...</p>
+  if (!user) return <p>cargando...</p>;
   return (
-    <div className="info">
-      <div>
-        <Card
-          className="card"
-          title={user.name}
-          bordered={false}
-          style={{
-            width: 300,
-          }}
-        >
-          <p>{user.email}</p>
-        </Card>
-      </div>
-      <div>
- {user.Orders.map((order) => {
-          console.log(order);
-          return order.Products.map((product) => {
-            return (
+    <>
+      <div className="all">
+        <div className="background">
+          <div className="info">
+            <h2 id="logged-user">Logged user:</h2>
+            <div>
               <Card
-                title={product.name}
+                className="cards"
+                title={user.name}
                 bordered={false}
                 style={{
                   width: 300,
                 }}
-                key={product.id}
               >
-                <p>{product.price} €</p>
+                <p>{user.email}</p>
               </Card>
-            );
-          });
-        })} 
+            </div>
+          </div>
+          <div>
+            <h2>Orders:</h2>
+            <div className="orders">
+              {user.Orders.map((order) => {
+                return order.Products.map((product) => {
+                  return (
+                    <Card
+                      title={product.name}
+                      bordered={false}
+                      style={{
+                        width: 300,
+                      }}
+                      key={product.id}
+                      className="cards"
+                    >
+                      <p>{product.price} €</p>
+                    </Card>
+                  );
+                });
+              })}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,11 +1,7 @@
 @import "../../colors.scss";
 
-.header {
+.home {
     display: flex;
     justify-content: center;
-    background-color: $primaryColor;
-}
-
-.nav {
-    gap: 15px;
+    background-color: $thirdColor;
 }

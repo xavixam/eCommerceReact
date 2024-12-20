@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UsersContext } from "../../context/UsersContext/UsersState";
+import "./Register.scss";
 
 const Register = () => {
   const initialValue = {
@@ -32,43 +33,77 @@ const Register = () => {
     console.log(data); //mostramos por consola la información del formulario(data)
     createUser(data);
     setData(initialValue); //limpiamos el formulario
-    navigate("/")// redireccionamos a home
+    navigate("/"); // redireccionamos a home
   };
 
   return (
-    <div>
-      <form>
-        <input
-          type="text"
-          placeholder="Inserta el nombre"
-          name="name"
-          value={name}
-          onChange={handleOnChange}
-        />
-        <input
-          type="password"
-          placeholder="Inserta la contraseña"
-          name="password"
-          value={password}
-          onChange={handleOnChange}
-        />
-        <input
-          type="email"
-          placeholder="Inserta el email"
-          name="email"
-          value={email}
-          onChange={handleOnChange}
-        />
-        <input
-          type="text"
-          placeholder="Inserta el rol"
-          name="role"
-          value={role}
-          onChange={handleOnChange}
-        />
-        <button onClick={handleSubmit}>Enviar</button>
-      </form>
-    </div>
+    <>
+      <div className="form-background">
+        <div className="form-container">
+          <form id="form">
+            <div id="form-div">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  type="text"
+                  placeholder="Inserta el nombre"
+                  name="name"
+                  value={name}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  type="password"
+                  placeholder="Inserta la contraseña"
+                  name="password"
+                  value={password}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  type="email"
+                  placeholder="Inserta el email"
+                  name="email"
+                  value={email}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  type="text"
+                  placeholder="Inserta el rol"
+                  name="role"
+                  value={role}
+                  onChange={handleOnChange}
+                />
+              </div>
+            </div>
+            <div id="div-btn">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              onClick={handleSubmit}
+              >
+              Enviar
+            </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 

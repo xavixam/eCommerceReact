@@ -1,4 +1,44 @@
-.info {
+@import "../../colors.scss";
+
+.background {
+  background-color: gray;
+  width: 90%;
+}
+
+.all {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 7%;
+}
+
+#logged-user {
+    color: $secondaryColor;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.orders {
+  display: flex;
+  justify-content: space-around;
+  height: 90%;
+}
+
+.cards {
+  margin: 20px;
+}
+
+Footer {
+  width: 90%;
+  position: fixed;
+  bottom: 0;
 }
