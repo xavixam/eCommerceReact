@@ -1,6 +1,6 @@
 import "./Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UsersContext } from "../../context/UsersContext/UsersState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
@@ -9,6 +9,10 @@ import { Badge } from "antd";
 const Header = () => {
   const { token, logout } = useContext(UsersContext);
   const { cart } = useContext(ProductsContext);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const navigate = useNavigate();
 
