@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UsersContext } from "../../context/UsersContext/UsersState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import { Card } from "antd";
+import { Card, Spin } from "antd";
 import "./Profile.scss";
 
 const Profile = () => {
@@ -11,7 +11,9 @@ const Profile = () => {
   useEffect(() => {
     getUserInfo();
   }, []);
-  if (!user) return <p>cargando...</p>;
+
+  if (!user || !user.Orders) return <Spin />;
+
   return (
     <>
       <div className="all">

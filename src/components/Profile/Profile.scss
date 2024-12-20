@@ -2,7 +2,8 @@
 
 .background {
   background-color: gray;
-  width: 90%;
+  max-width: 90%;
+  height: 90%;
 }
 
 .all {
@@ -17,6 +18,7 @@
 }
 
 .info {
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
 }
@@ -29,6 +31,7 @@ h2 {
 
 .orders {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   height: 90%;
 }

@@ -9,7 +9,7 @@ const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext);
 
   if (cart.length == 0) {
-    return <Empty description="The cart is empty" />;
+    return (<><br /><Empty description="The cart is empty" /></>);
   }
 
   return (
